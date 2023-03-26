@@ -50,9 +50,9 @@ const ShoppingCart = () => {
   const { classes } = useStyles();
 
   useMemo(() => {
-    document.title = "Cart | Pizza Fleet";
+    document.title = "Cart | TheSimplySalad";
     return () => {
-      document.title = "Pizza Fleet";
+      document.title = "TheSimplySalad";
     };
   }, []);
 

@@ -20,9 +20,9 @@ const Home = () => {
   const [toAdd, setToAdd] = useState(null);
 
   useMemo(() => {
-    document.title = "Home | Pizza Fleet";
+    document.title = "Home | TheSimplySalad";
     return () => {
-      document.title = "Pizza Fleet";
+      document.title = "TheSimplySalad";
     };
   }, []);
 

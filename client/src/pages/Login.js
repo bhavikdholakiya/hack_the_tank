@@ -80,9 +80,9 @@ const Login = () => {
   const oAuthMessage = Cookies.get("info");
 
   useMemo(() => {
-    document.title = "Login | Pizza Fleet";
+    document.title = "Login | TheSimplySalad";
     return () => {
-      document.title = "Pizza Fleet";
+      document.title = "TheSimplySalad";
     };
   }, []);
 

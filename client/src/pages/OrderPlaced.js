@@ -20,9 +20,9 @@ const OrderPlaced = () => {
   const { addOrder } = useSelector((state) => state.order);
 
   useMemo(() => {
-    document.title = "Order Placed Successfully | Pizza Fleet";
+    document.title = "Order Placed Successfully | TheSimplySalad";
     return () => {
-      document.title = "Pizza Fleet";
+      document.title = "TheSimplySalad";
     };
   }, []);
 

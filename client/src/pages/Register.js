@@ -78,9 +78,9 @@ const Register = () => {
   const dispatch = useDispatch();
 
   useMemo(() => {
-    document.title = "Register | Pizza Fleet";
+    document.title = "Register | TheSimplySalad";
     return () => {
-      document.title = "Pizza Fleet";
+      document.title = "TheSimplySalad";
     };
   }, []);
 

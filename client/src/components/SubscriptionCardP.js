@@ -24,6 +24,8 @@ const SubscriptionCardP = ({ plan, price, value, features }) => {
         }
         console.log(newplan);
         const data = await axios.post('http://localhost:5000/user/subscriptionplan', newplan);
+        alert("You subscription of " + value + " plan is successful.");
+        window.location.href = 'http://localhost:3000/';
       }}>Subscribe Now</Button>
     </div>
   );

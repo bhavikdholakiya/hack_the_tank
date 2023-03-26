@@ -17,9 +17,9 @@ const Checkout = () => {
   const [mustSubmit, setMustSubmit] = useState(false);
 
   useMemo(() => {
-    document.title = "Checkout | Pizza Fleet";
+    document.title = "Checkout | TheSimplySalad";
     return () => {
-      document.title = "Pizza Fleet";
+      document.title = "TheSimplySalad";
     };
   }, []);
 

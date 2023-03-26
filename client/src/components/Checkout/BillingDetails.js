@@ -54,7 +54,7 @@ const BillingDetails = ({ user, onCheckoutFinish, mustSubmit }) => {
   const dispatch = useDispatch();
 
   const formCheckout = useRef(null);
-
+  const available = ["395004", "396003", "382120", "382220", "382460", "364290"];
   const handleSubmit = (values) => {
     if (!form.isValid()) return;
     dispatch(addOrder(values));
@@ -105,6 +105,7 @@ const BillingDetails = ({ user, onCheckoutFinish, mustSubmit }) => {
       city: isNotEmpty("City is required!"),
       state: isNotEmpty("State is required!"),
       zipCode: isNotEmpty("Zip code is required!"),
+      zipCode: (value)=> !available.includes(value),
       country: isNotEmpty("Country is required!"),
       email: (value) =>
         /^\s*$/.test(value)

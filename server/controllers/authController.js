@@ -420,6 +420,7 @@ module.exports = {
     // console.log(req);
     console.log(now);
     await User.findByIdAndUpdate(now.userid, {subscriptionplan: now.plan});
+    res.send("success");
   }
   
 };

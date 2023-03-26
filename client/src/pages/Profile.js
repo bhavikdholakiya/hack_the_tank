@@ -10,9 +10,9 @@ const Profile = () => {
   const { user, updateUser } = useSelector((state) => state.auth);
   const segment = window.location.href.toString().split("/")[4];
   useMemo(() => {
-    document.title = "Profile | Pizza Fleet";
+    document.title = "Profile | TheSimplySalad";
     return () => {
-      document.title = "Pizza Fleet";
+      document.title = "TheSimplySalad";
     };
   }, []);
 
