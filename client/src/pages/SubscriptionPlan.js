@@ -5,8 +5,8 @@ const SubscriptionPlan = () => {
   return (
     <div style={{display:"flex", justifyContent:'space-around', lineHeight:'3.55',fontSize:'25px'}}>
     <SubscriptionCardP
-        plan="Basic Plan"
-        price="₹6000/month"
+        plan="Weekly Plan"
+        price="₹1400/week"
         value="basic"
         features={['Free Delivery', '200 /day', 'Menu - Variations']}
       />

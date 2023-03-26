@@ -1,6 +1,7 @@
 import { Paper, Group, Title, Text, Image, Divider } from "@mantine/core";
-
+import { useSelector } from "react-redux";
 const OrderDetailsModal = ({ order, subTotal }) => {
+  const { user, updateUser } = useSelector((state) => state.auth);
   return (
     <Paper
       sx={(theme) => ({
@@ -67,7 +68,10 @@ const OrderDetailsModal = ({ order, subTotal }) => {
       <Group my={10} position="apart">
         <Text>Shipping</Text>
         <Text fz="sm" fw={700}>
-          {order?.cart?.shipping === 0 ? "Free" : `${order?.cart?.shipping}DA`}
+          {
+            console.log(user.subscriptionplan)
+          }
+          {order?.cart?.shipping === 0 ? "Free" : `${45}DA`}
         </Text>
       </Group>
       <Group my={10} position="apart">

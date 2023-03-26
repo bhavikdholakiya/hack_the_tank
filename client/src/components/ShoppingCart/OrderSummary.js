@@ -28,6 +28,7 @@ const OrderSummary = ({ subTotal, cart }) => {
   const { classes } = useStyles();
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.cart.applyCoupon);
+  const { user, updateUser } = useSelector((state) => state.auth);
 
   const handleSubmit = (values) => {
     if (!form.isValid()) return;
@@ -40,7 +41,7 @@ const OrderSummary = ({ subTotal, cart }) => {
       couponCode: "",
     },
   });
-
+  let cost = (user.subscriptionplan !== 'free' ? 0 : 45);
   return (
     <Grid.Col sm={4}>
       <Paper
@@ -65,7 +66,7 @@ const OrderSummary = ({ subTotal, cart }) => {
         <Group position="apart">
           <Text>Shipping</Text>
           <Text fz="sm" fw={700}>
-            {cart.shipping === 0 ? "Free" : `${cart.shipping}DA`}
+            {cart.shipping === 0  && user.subscriptionplan!='free'? "Free" : `${45}DA`}
           </Text>
         </Group>
         <Group position="apart">
@@ -108,7 +109,7 @@ const OrderSummary = ({ subTotal, cart }) => {
         <Group sx={{ margin: "1rem 0" }} position="apart">
           <Text>Total To Pay</Text>
           <Text fz="sm" fw={700}>
-            {cart.totalToPay}DA
+            {cart.totalToPay + cost}DA
           </Text>
         </Group>
         <Link

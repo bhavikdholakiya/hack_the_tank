@@ -36,7 +36,7 @@ class MyVideos extends React.Component {
 
     const opts = {
       height: '400',
-      width: '550',
+      width: '500',
       playerVars: {
         // https://developers.google.com/youtube/player_parameters
         autoplay: 0,
@@ -44,7 +44,7 @@ class MyVideos extends React.Component {
     };
 
     return (
-      <div style={{display:'grid'}}>
+      <div style={{display:'flex', flexDirection:'row', flexWrap:'wrap', marginRight:"3px"}}>
         {videoIds.map((videoId) => (
           <YouTube key={videoId} videoId={videoId} opts={opts} />
         ))}

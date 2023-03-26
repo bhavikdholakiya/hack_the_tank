@@ -6,6 +6,9 @@ module.exports = {
     try {
       const { pizzaId, quantity, price } = req.body;
       const { tempUser } = req;
+      console.log(quantity);
+      console.log(tempUser);
+      console.log(req);
       if (!tempUser) {
         let { cartId } = req.cookies;
         if (!cartId) {
@@ -138,12 +141,14 @@ module.exports = {
         }
       }
     } catch (err) {
-      return res.status(500).json({ message: err.message });
+      // return res.status(500).json({ "not coming here":"h"});
+      return res.json({"temp":"temp"});
     }
   },
   getCartItems: async (req, res) => {
     try {
       const { tempUser } = req;
+      console.log(req);
       if (tempUser) {
         const cart = await Cart.findOne({
           user: tempUser._id,

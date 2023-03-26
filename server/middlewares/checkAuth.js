@@ -4,6 +4,7 @@ require("dotenv").config();
 
 const checkAuth = async (req, res, next) => {
   try {
+    
     let { refreshToken } = req.cookies;
     if (!refreshToken) {
       return next();
@@ -26,7 +27,7 @@ const checkAuth = async (req, res, next) => {
     }
     req.tempUser = user;
     console.log("Dev"+req.tempUser);
-    next(req.tempUser._id);
+    next();
   } catch (err) {
     console.log(`Error from checkAuth.js: ${err.message}`);
     return next();
